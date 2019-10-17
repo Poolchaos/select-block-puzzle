@@ -1,3 +1,20 @@
-<h5>title</h5>
+<h5>{{ title }}</h5>
 
 
+<div class="grid-wrap">
+  <div class="grid">
+    <div class="row" *ngFor="let row of grid;let rowIndex = index;">
+      <div class="cell" *ngFor="let col of row;let colIndex = index;"
+        [ngClass]="{ 'filled': col.isActive }" (click)="move(rowIndex, colIndex)">
+        {{ col.value }}
+      </div>
+    </div>
+  </div>
+<!-- 
+  <div class="grid">
+    <div class="row" >
+
+    </div>
+  </div> 
+-->
+</div>
